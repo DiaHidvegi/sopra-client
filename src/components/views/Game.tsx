@@ -32,6 +32,7 @@ const Game = () => {
 
   const logout = (): void => {
     localStorage.removeItem("token");
+    localStorage.removeItem("isLoggedIn");
     navigate("/login");
   };
 
@@ -84,8 +85,8 @@ const Game = () => {
     content = (
       <div className="game">
         <ul className="game user-list">
-          {users.map((user: User) => (
-            <li key={user.id}>
+          {Array.isArray(users) && users.map((user: User) => (
+            <li key={user.id} onClick={() => navigate(`/profile/${user.id}`)}>
               <Player user={user} />
             </li>
           ))}

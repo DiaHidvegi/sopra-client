@@ -41,13 +41,14 @@ const Login = () => {
   const doLogin = async () => {
     try {
       const requestBody = JSON.stringify({ username, password });
-      const response = await api.post("/users", requestBody);
+      const response = await api.post("/login", requestBody); // Adjusted to use a secure login endpoint
 
       // Get the returned user and update a new object.
-      const user = new User(response.data);
+      const user = new User(response.data)
 
       // Store the token into the local storage.
       localStorage.setItem("token", user.token);
+      localStorage.setItem("isLoggedIn", "true");
 
       // Login successfully worked --> navigate to the route /game in the GameRouter
       navigate("/game");
@@ -88,6 +89,6 @@ const Login = () => {
 };
 
 /**
- * You can get access to the history object's properties via the useLocation, useNavigate, useParams, ... hooks.
+ * You can get access to the history object"s properties via the useLocation, useNavigate, useParams, ... hooks.
  */
 export default Login;

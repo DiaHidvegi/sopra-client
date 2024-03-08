@@ -1,5 +1,6 @@
 export type User = {
   username: string;
-  name: string;
+  status: string;
   id: number;
+  creation_date: Date;
 };

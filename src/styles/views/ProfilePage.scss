@@ -1,0 +1,62 @@
+.profile {
+    &.container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px; 
+      height: 100vh;
+    }
+  
+    &.card {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 300px;
+  
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        color: #666;
+        line-height: 1.6;
+  
+        strong {
+          color: #333;
+        }
+      }
+    }
+
+      form {
+        label {
+          display: block;
+          font-weight: bold;
+          margin-top: 20px;
+          color: #333;
+        }
+
+        input[type="date"] {
+          margin-top: 5px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+
+        button {
+          margin-top: 10px;
+          padding: 10px 15px;
+          background-color: #1659a0;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken(#007bff, 10%);
+          }
+        }
+    }
+  }
+  
