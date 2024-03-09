@@ -25,9 +25,10 @@ const ProfileEditForm: React.FC<ProfileEditFormProps> = ({ user, onSave }) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const id = user.id
     try {
-      await api.put(`/users/${user.id}`, { ...username, birthday });
-      onSave({ ...user, username, birthday }); 
+      await api.put(`/users/${id}`, { id, username, birthday });
+      onSave({ ...user, id, username, birthday }); 
     } catch (error) {
       console.error("Failed to update profile", error);
     }
